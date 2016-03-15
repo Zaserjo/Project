@@ -8,7 +8,8 @@ public class Graphical_Interface {
 	 public static void main(String[] args) {
 		 JFrame meinJFrame = new JFrame();
 	     meinJFrame.setTitle("Spiel");
-	     meinJFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	     meinJFrame.setExtendedState(meinJFrame.MAXIMIZED_BOTH);
+	     meinJFrame.setUndecorated(true);
 	     
 	     JPanel panel = new JPanel();
 	     panel.setLayout(null);
@@ -19,7 +20,6 @@ public class Graphical_Interface {
 	     JButton profilButton = new JButton("Spielerprofil");
 	     
 	     Cursor c = new Cursor(12);
-	     //
 	     
 	     /*
 	      * Cursor-Art
@@ -46,11 +46,7 @@ public class Graphical_Interface {
 	     
 	     meinJFrame.add(panel);
 	 
-	     // Fenstergröße wird so angepasst, dass 
-	     // der Inhalt reinpasst    
-	     meinJFrame.pack();
-	 
-	     meinJFrame.setResizable(true);
+	     meinJFrame.setResizable(false);
 	     meinJFrame.setVisible(true);
 	  }
 }
