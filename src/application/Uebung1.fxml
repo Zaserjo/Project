@@ -42,7 +42,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="frage_input" alignment="CENTER" prefHeight="123.0" prefWidth="302.0" text="TODO: DIE FRAGE" />
+            <Label fx:id="frage_input" alignment="CENTER" prefHeight="123.0" prefWidth="302.0" text="TODO: DIE FRAGE" textAlignment="CENTER" wrapText="true" />
             <GridPane GridPane.rowIndex="1">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

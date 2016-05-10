@@ -199,8 +199,7 @@ public class UebungenController {
         ScriptEngine engine = manager.getEngineByName("nashorn");
 
         ObjectTest object = new ObjectTest();
-		engine.put("access", object); // platziere objekt unter namen "access" in js
-        engine.eval("access.set('hello world')"); // rufe access.print via JS auf
+		engine.put("frage", object); // platziere objekt unter namen "access" in js
 
         
         String test = textInput.getText();
@@ -208,11 +207,11 @@ public class UebungenController {
        
         
         frage_input.setText(object.eingabeString.toString());
-        if(frage_input.getText().equals("test")) {
+        /* if(frage_input.getText().equals("test")) {
         	System.out.println("Richtig!");
         } else {
         	System.out.println("Falsch!");
-        }
+        }*/
         
 	}
 	
