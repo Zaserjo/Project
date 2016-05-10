@@ -99,7 +99,7 @@
                   <TextArea fx:id="textInput" prefHeight="733.0" prefWidth="1258.0" wrapText="true" BorderPane.alignment="CENTER" />
                </center>
                <bottom>
-                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1_run" prefHeight="31.0" prefWidth="308.0" text="Programm ausführen" BorderPane.alignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1run" prefHeight="31.0" prefWidth="308.0" text="Programm ausführen" BorderPane.alignment="CENTER" />
                </bottom>
             </BorderPane>
          </children>

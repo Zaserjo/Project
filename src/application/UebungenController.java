@@ -6,16 +6,23 @@ import java.awt.Font;
 import java.awt.Window;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import javax.security.auth.x500.X500Principal;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 
 import com.sun.media.jfxmedia.events.NewFrameEvent;
 
+import application.Main.ObjectTest;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -184,6 +191,37 @@ public class UebungenController {
 		jFrame.setSize(350,100);
 		jFrame.pack();
 		jFrame.setVisible(true);
+	}
+	
+	public void uebung1run() throws IOException, ScriptException {
+		ScriptEngineManager manager = new ScriptEngineManager();
+
+        ScriptEngine engine = manager.getEngineByName("nashorn");
+
+        ObjectTest object = new ObjectTest();
+		engine.put("access", object); // platziere objekt unter namen "access" in js
+        engine.eval("access.set('hello world')"); // rufe access.print via JS auf
+
+        
+        String test = textInput.getText();
+        engine.eval(test); // user kann js code eingeben
+       
+        
+        frage_input.setText(object.eingabeString.toString());
+        if(frage_input.getText().equals("test")) {
+        	System.out.println("Richtig!");
+        } else {
+        	System.out.println("Falsch!");
+        }
+        
+	}
+	
+	public static class ObjectTest {
+		private String eingabeString;
+		
+        public void set(String msg) { // soll von javascript aufgerufen werden
+        	eingabeString = msg;
+        }
 	}
 	
 	public void exit()
