@@ -1,6 +1,8 @@
 package application;
 
 import java.awt.BorderLayout;
+
+
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Window;
@@ -22,7 +24,6 @@ import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 
 import com.sun.media.jfxmedia.events.NewFrameEvent;
 
-import application.Main.ObjectTest;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -38,6 +39,11 @@ public class UebungenController {
 	@FXML Button antwort2_input;
 	@FXML Button antwort3_input;
 	@FXML Button antwort4_input;
+	//@FXML Button fehlerListe;
+	
+	public UebungenController() {
+		
+	}
 	
 	public void back()
 	{
@@ -113,110 +119,82 @@ public class UebungenController {
 		}
 	}
 	
-	public void uebung1_run() {
-		int mistakes = 0;
-		JFrame jFrame = new JFrame();
-		JLabel jLabel = new JLabel();
-		jFrame.add(jLabel);
-		String[] x = textInput.getText().split(";");
-		if(x[0].equals("frage.set(Was ist 3+3?)")) {
-			frage_input.setText("Was ist 3+3?");
-		} else {
-			jLabel.setText(jLabel.getText()+", Frage wurde falsch gesetzt!");
-			mistakes++;
-		}
-		if(x[1].equals("antwort1.set(6)")) {
-			antwort1_input.setText("6");
-		} else {
-			jLabel.setText(jLabel.getText()+", Antwort1 wurde falsch gesetzt!");
-			mistakes++;
-		}
-		if(x[2].equals("antwort2.set(5)")) {
-			antwort2_input.setText("5");
-		} else {
-			jLabel.setText(jLabel.getText()+", Antwort2 wurde falsch gesetzt!");
-			mistakes++;
-		}
-		if(x[3].equals("antwort3.set(4)")) {
-			antwort3_input.setText("4");
-		} else {
-			jLabel.setText(jLabel.getText()+", Antwort3 wurde falsch gesetzt!");
-			mistakes++;
-		}
-		if(x[4].equals("antwort4.set(7)")) {
-			antwort4_input.setText("7");
-		} else {
-			jLabel.setText(jLabel.getText()+", Antwort4 wurde falsch gesetzt!");
-		}
-		if(mistakes == 0) {
-			jLabel.setText("Du hast die Übung erfolgreich absolviert");
-		} else {
-			jLabel.setText(jLabel.getText()+"Du hast "+mistakes+" Fehler!");
-		}
-		jLabel.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jFrame.setVisible(false);
-				
-			}
-		});
-		jFrame.setLocation(960, 540);
-		jLabel.setFont(new Font("Arial", 0, 20));
-		jFrame.setUndecorated(true);
-		jFrame.setSize(350,100);
-		jFrame.pack();
-		jFrame.setVisible(true);
-	}
-	
-	public void uebung1run() throws IOException, ScriptException {
+	public void uebung1run() throws IOException, ScriptException, InterruptedException {
 		ScriptEngineManager manager = new ScriptEngineManager();
 
         ScriptEngine engine = manager.getEngineByName("nashorn");
 
-        ObjectTest object = new ObjectTest();
-		engine.put("frage", object); // platziere objekt unter namen "access" in js
+        //Objekte zum Eingeben erzeugt
+        ObjectTest frage = new ObjectTest();
+        ObjectTest antwort1 = new ObjectTest();
+        ObjectTest antwort2 = new ObjectTest();
+        ObjectTest antwort3 = new ObjectTest();
+        ObjectTest antwort4 = new ObjectTest();
 
-        
+        //In engine einfügen
+		engine.put("frage", frage);
+		engine.put("antwort1", antwort1);
+		engine.put("antwort2", antwort2);
+		engine.put("antwort3", antwort3);
+		engine.put("antwort4", antwort4);
+
         String test = textInput.getText();
         engine.eval(test); // user kann js code eingeben
-       
         
-        frage_input.setText(object.eingabeString.toString());
-        /* if(frage_input.getText().equals("test")) {
-        	System.out.println("Richtig!");
+        //eingegeben Code in String umgewandelt und in die Komponenten eingefügt
+        frage_input.setText(frage.eingabeString);
+        antwort1_input.setText(antwort1.eingabeString);
+        antwort2_input.setText(antwort2.eingabeString);
+        antwort3_input.setText(antwort3.eingabeString);
+        antwort4_input.setText(antwort4.eingabeString);
+        
+        String fehler = "";
+        
+        //System.out.println(fehlerListe.getText());
+        int mistakes = 0;
+        if(frage_input.getText().equals("Was ist 3+3?")) {
         } else {
-        	System.out.println("Falsch!");
-        }*/
+        	mistakes++;
+        	fehler += " Frage wurde falsch gesetzt!";
+        }
+        if(antwort1_input.getText().equals("6")) {
+        	
+        } else {
+        	mistakes++;
+        	fehler += " erste Antwort wurde falsch gesetzt!";
+        }
+        if(antwort2_input.getText().equals("5")) {
+        	
+        } else {
+        	mistakes++;
+        	fehler += " zweite Antwort wurde falsch gesetzt!";
+        }
+        if(antwort3_input.getText().equals("4")) {
+        	
+        } else {
+        	mistakes++;
+        	fehler += " dritte Antwort wurde falsch gesetzt!";
+        }
+        if(antwort4_input.getText().equals("7")) {
+        	
+        } else {
+        	mistakes++;
+        	fehler += " vierte Antwort wurde falsch gesetzt!";
+        }
         
+       final String tempFehler = fehler;
+       final int temp = mistakes; 
+       new Callback(3000, () -> {
+    	   if(temp > 0) {
+           	uebungUnerfolgreich(tempFehler);
+           } else {
+           	uebungErfolgreich();
+           }
+       });
 	}
 	
 	public static class ObjectTest {
-		private String eingabeString;
+		String eingabeString;
 		
         public void set(String msg) { // soll von javascript aufgerufen werden
         	eingabeString = msg;
@@ -226,5 +204,43 @@ public class UebungenController {
 	public void exit()
 	{
 		System.exit(1);
+	}
+	
+	public void uebungErfolgreich()
+	{
+		try {
+			Parent root = FXMLLoader.load(MainApp.class.getResource("UebungErfolgreich.fxml"));
+			MainApp.primary.setScene(new Scene(root));
+			MainApp.primary.show();
+			//mainWindow.setResizable(false);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void uebungUnerfolgreich(String error) {
+		try {
+			Parent root = FXMLLoader.load(MainApp.class.getResource("UebungUnerfolgreich.fxml"));
+			MainApp.primary.setScene(new Scene(root));
+			MainApp.primary.show();
+			LaunchedManager.notifyListener(error);
+			//mainWindow.setResizable(false);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void uebungen()
+	{
+		try {
+			Parent root = FXMLLoader.load(MainApp.class.getResource("Uebungen.fxml"));
+			MainApp.primary.setScene(new Scene(root));
+			MainApp.primary.show();
+			//mainWindow.setResizable(false);
+		} catch (IOException e) {
+			e.printStackTrace();
+
+		}
 	}
 }
