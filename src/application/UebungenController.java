@@ -155,31 +155,31 @@ public class UebungenController {
         if(frage_input.getText().equals("Was ist 3+3?")) {
         } else {
         	mistakes++;
-        	fehler += " Frage wurde falsch gesetzt!";
+        	fehler += " Frage wurde nicht richtig gesetzt!";
         }
         if(antwort1_input.getText().equals("6")) {
         	
         } else {
         	mistakes++;
-        	fehler += " erste Antwort wurde falsch gesetzt!";
+        	fehler += " erste Antwort wurde nicht richtig gesetzt!";
         }
         if(antwort2_input.getText().equals("5")) {
         	
         } else {
         	mistakes++;
-        	fehler += " zweite Antwort wurde falsch gesetzt!";
+        	fehler += " zweite Antwort wurde nicht richtig gesetzt!";
         }
         if(antwort3_input.getText().equals("4")) {
         	
         } else {
         	mistakes++;
-        	fehler += " dritte Antwort wurde falsch gesetzt!";
+        	fehler += " dritte Antwort wurde nicht richtig gesetzt!";
         }
         if(antwort4_input.getText().equals("7")) {
         	
         } else {
         	mistakes++;
-        	fehler += " vierte Antwort wurde falsch gesetzt!";
+        	fehler += " vierte Antwort wurde nicht richtig gesetzt!";
         }
         
        final String tempFehler = fehler;
