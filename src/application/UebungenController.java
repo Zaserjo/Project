@@ -118,47 +118,7 @@ public class UebungenController {
 
 		}
 	}
-	
-	
-	
-	/*public void uebung2run() throws IOException, ScriptException, InterruptedException {
-		ScriptEngineManager manager = new ScriptEngineManager();
 
-        ScriptEngine engine = manager.getEngineByName("nashorn");
-
-        //Objekte zum Eingeben erzeugt
-        ObjectTest ueberpruefen = new ObjectTest();
-        ObjectTest sonst = new ObjectTest();
-
-        //In engine einfügen
-		engine.put("if", ueberpruefen);
-		engine.put("else", sonst);
-
-        String test = textInput2.getText();
-        engine.eval(test); // user kann js code eingeben
-                
-        String fehler = "";
-        
-        int mistakes = 0;
-        if(ueberpruefen.eingabeString.equals("xyz")) {
-        	System.out.println("drai");
-        } else {
-        	mistakes++;
-        }
-        
-       final String tempFehler = fehler;
-       final int temp = mistakes; 
-       new Callback(3000, () -> {
-    	   if(temp > 0) {
-           	uebungUnerfolgreich(tempFehler);
-           } else {
-           	uebungErfolgreich();
-           }
-       });
-	}*/
-	
-	
-	
 	public void exit()
 	{
 		System.exit(1);

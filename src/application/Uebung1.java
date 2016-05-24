@@ -21,7 +21,18 @@ public class Uebung1 {
 	@FXML Button antwort2_input;
 	@FXML Button antwort3_input;
 	@FXML Button antwort4_input;
-	@FXML TextArea textInput2;
+	
+	public static class ObjectTest {
+		String eingabeString;
+		
+        public void set(String msg) { // soll von javascript aufgerufen werden
+        	eingabeString = msg;
+        }
+        
+        public void ueberpruefen(String msg) {
+        	eingabeString = msg;
+        }
+	}
 	
 	public void uebung1run() throws IOException, ScriptException, InterruptedException {
 		ScriptEngineManager manager = new ScriptEngineManager();
@@ -100,14 +111,6 @@ public class Uebung1 {
         	System.exit(-1);
         }
         
-	}
-	
-	public static class ObjectTest {
-		String eingabeString;
-		
-        public void set(String msg) { // soll von javascript aufgerufen werden
-        	eingabeString = msg;
-        }
 	}
 	
 	public void uebungErfolgreich()

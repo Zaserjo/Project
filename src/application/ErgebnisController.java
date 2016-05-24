@@ -85,7 +85,7 @@ public class ErgebnisController {
 	
 	public void exit()
 	{
-			System.exit(1);
+		System.exit(1);
 	}
 	
 	public void back()

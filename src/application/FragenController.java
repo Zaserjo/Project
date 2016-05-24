@@ -77,9 +77,13 @@ public class FragenController {
 		if(antwort1_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort1_btn.setStyle("-fx-background-color: lightgreen;");
+			antwort2_btn.setStyle("-fx-background-color: tomato");
+			antwort3_btn.setStyle("-fx-background-color: tomato");
+			antwort4_btn.setStyle("-fx-background-color: tomato");
 		}
 		else {
 			antwort1_btn.setStyle("-fx-background-color: tomato;");
+
 		}
 		weiter();
 	}
@@ -89,6 +93,9 @@ public class FragenController {
 		if(antwort2_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort2_btn.setStyle("-fx-background-color: lightgreen;");
+			antwort1_btn.setStyle("-fx-background-color: tomato");
+			antwort3_btn.setStyle("-fx-background-color: tomato");
+			antwort4_btn.setStyle("-fx-background-color: tomato");
 		}
 		else {
 			antwort2_btn.setStyle("-fx-background-color: tomato;");
@@ -101,6 +108,9 @@ public class FragenController {
 		if(antwort3_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort3_btn.setStyle("-fx-background-color: lightgreen;");
+			antwort1_btn.setStyle("-fx-background-color: tomato");
+			antwort2_btn.setStyle("-fx-background-color: tomato");
+			antwort4_btn.setStyle("-fx-background-color: tomato");
 		}
 		else {
 			antwort3_btn.setStyle("-fx-background-color: tomato;");
@@ -113,6 +123,9 @@ public class FragenController {
 		if(antwort4_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort4_btn.setStyle("-fx-background-color: lightgreen;");
+			antwort1_btn.setStyle("-fx-background-color: tomato");
+			antwort2_btn.setStyle("-fx-background-color: tomato");
+			antwort3_btn.setStyle("-fx-background-color: tomato");
 		}
 		else {
 			antwort4_btn.setStyle("-fx-background-color: tomato;");

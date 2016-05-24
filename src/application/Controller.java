@@ -147,8 +147,8 @@ public class Controller {
 				MainApp.primary.setScene(new Scene(root));
 				MainApp.primary.show();
 				//mainWindow.setResizable(false);
-			} catch (IOException e) {
-				//e.printStackTrace();
+			} catch (Exception e) {
+				System.exit(13);
 			}
 		}
 	}
