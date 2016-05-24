@@ -39,7 +39,7 @@ public class UebungenController {
 	@FXML Button antwort2_input;
 	@FXML Button antwort3_input;
 	@FXML Button antwort4_input;
-	//@FXML Button fehlerListe;
+	@FXML TextArea textInput2;
 	
 	public UebungenController() {
 		
@@ -119,67 +119,31 @@ public class UebungenController {
 		}
 	}
 	
-	public void uebung1run() throws IOException, ScriptException, InterruptedException {
+	
+	
+	/*public void uebung2run() throws IOException, ScriptException, InterruptedException {
 		ScriptEngineManager manager = new ScriptEngineManager();
 
         ScriptEngine engine = manager.getEngineByName("nashorn");
 
         //Objekte zum Eingeben erzeugt
-        ObjectTest frage = new ObjectTest();
-        ObjectTest antwort1 = new ObjectTest();
-        ObjectTest antwort2 = new ObjectTest();
-        ObjectTest antwort3 = new ObjectTest();
-        ObjectTest antwort4 = new ObjectTest();
+        ObjectTest ueberpruefen = new ObjectTest();
+        ObjectTest sonst = new ObjectTest();
 
         //In engine einfügen
-		engine.put("frage", frage);
-		engine.put("antwort1", antwort1);
-		engine.put("antwort2", antwort2);
-		engine.put("antwort3", antwort3);
-		engine.put("antwort4", antwort4);
+		engine.put("if", ueberpruefen);
+		engine.put("else", sonst);
 
-        String test = textInput.getText();
+        String test = textInput2.getText();
         engine.eval(test); // user kann js code eingeben
-        
-        //eingegeben Code in String umgewandelt und in die Komponenten eingefügt
-        frage_input.setText(frage.eingabeString);
-        antwort1_input.setText(antwort1.eingabeString);
-        antwort2_input.setText(antwort2.eingabeString);
-        antwort3_input.setText(antwort3.eingabeString);
-        antwort4_input.setText(antwort4.eingabeString);
-        
+                
         String fehler = "";
         
-        //System.out.println(fehlerListe.getText());
         int mistakes = 0;
-        if(frage_input.getText().equals("Was ist 3+3?")) {
+        if(ueberpruefen.eingabeString.equals("xyz")) {
+        	System.out.println("drai");
         } else {
         	mistakes++;
-        	fehler += " Frage wurde nicht richtig gesetzt!";
-        }
-        if(antwort1_input.getText().equals("6")) {
-        	
-        } else {
-        	mistakes++;
-        	fehler += " erste Antwort wurde nicht richtig gesetzt!";
-        }
-        if(antwort2_input.getText().equals("5")) {
-        	
-        } else {
-        	mistakes++;
-        	fehler += " zweite Antwort wurde nicht richtig gesetzt!";
-        }
-        if(antwort3_input.getText().equals("4")) {
-        	
-        } else {
-        	mistakes++;
-        	fehler += " dritte Antwort wurde nicht richtig gesetzt!";
-        }
-        if(antwort4_input.getText().equals("7")) {
-        	
-        } else {
-        	mistakes++;
-        	fehler += " vierte Antwort wurde nicht richtig gesetzt!";
         }
         
        final String tempFehler = fehler;
@@ -191,15 +155,9 @@ public class UebungenController {
            	uebungErfolgreich();
            }
        });
-	}
+	}*/
 	
-	public static class ObjectTest {
-		String eingabeString;
-		
-        public void set(String msg) { // soll von javascript aufgerufen werden
-        	eingabeString = msg;
-        }
-	}
+	
 	
 	public void exit()
 	{

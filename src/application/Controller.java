@@ -64,7 +64,6 @@ public class Controller {
 	}
 
 	public void musik() {
-		MP3 mp3 = new MP3();
 		SceneGenerator sceneGenerator = new SceneGenerator();
 		MainApp.primary.setScene(sceneGenerator.createScene());
 	}

@@ -42,7 +42,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="frage_input" alignment="CENTER" prefHeight="123.0" prefWidth="302.0" text="TODO: DIE FRAGE" textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="frage_input" alignment="CENTER" prefHeight="123.0" prefWidth="302.0" text="Was ist 6²?" textAlignment="CENTER" wrapText="true" />
             <GridPane GridPane.rowIndex="1">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -53,25 +53,25 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="antwort1_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TODO: Antwort 1" textAlignment="CENTER" wrapText="true" />
-                  <Button fx:id="antwort3_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="TODO: Antwort 3" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
-                  <Button fx:id="antwort4_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="TODO: Antwort 4" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="antwort2_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TODO: Antwort 2" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" />
+                  <Button fx:id="antwort1_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="36" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="antwort3_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="16" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
+                  <Button fx:id="antwort4_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="49" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="antwort2_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="25" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <top>
-                  <Label text="Lektion 1 (set-, get-Methoden)" wrapText="true" BorderPane.alignment="CENTER" />
+                  <Label text="Lektion 2 (if und else)" wrapText="true" BorderPane.alignment="CENTER" />
                </top>
                <center>
-                  <Label text="Setter-Methoden sind eine Funktion, um den Wert einer Variable zu setzen" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                  <Label text="if und else sind Funktionen, um Werte zu überprüfen." textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                </center>
                <bottom>
-                  <Label prefHeight="41.0" prefWidth="378.0" text="In dieser Lektion sollen sie eine Frage mit vier Antwortmöglichkeiten einfügen." textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                  <Label prefHeight="41.0" prefWidth="378.0" text="In dieser Lektion sollen sie überprüfen, ob die richtige Antwort ausgewählt wurde." textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -80,14 +80,14 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <center>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="378.0" text="Setzen die Variable frage auf &quot;Was ist 3+3?&quot;, antwort1 auf &quot;6&quot;, antwort2 auf &quot;5&quot;, antwort3 auf &quot;4&quot; und antwort4 auf &quot;7&quot;" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="79.0" prefWidth="547.0" text="Machen Sie eine if-Überprüfung, wo sie die Variablen antwort1/2/3/4 mit der richtigenAntwort verbinden.mit der richtigen Antwort vergleichen, wenn sie richtig ist schreiben sie frageRichtig();, sonst frageFalsch();" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="12.0" />
                      </font>
                   </Label>
                </center>
                <bottom>
-                  <Label prefHeight="62.0" prefWidth="372.0" text="Set-Methoden funktionieren durch variablenName.set(wert);" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                  <Label prefHeight="44.0" prefWidth="372.0" text="If geht mit: if(Überprüfung) { methode(); }else{methode();}" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -96,10 +96,10 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <center>
-                  <TextArea fx:id="textInput" prefHeight="733.0" prefWidth="1258.0" wrapText="true" BorderPane.alignment="CENTER" />
+                  <TextArea fx:id="textInput2" prefHeight="66.0" prefWidth="378.0" wrapText="true" BorderPane.alignment="CENTER" />
                </center>
                <bottom>
-                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1run" prefHeight="31.0" prefWidth="308.0" text="Programm ausführen" BorderPane.alignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung2run" prefHeight="31.0" prefWidth="308.0" text="Programm ausführen" BorderPane.alignment="CENTER" />
                </bottom>
             </BorderPane>
          </children>
