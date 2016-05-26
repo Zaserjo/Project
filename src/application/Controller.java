@@ -105,10 +105,7 @@ public class Controller {
 			MainApp.primary.show();
 			initFragen();
 			LaunchedManager.notifyListener(alleFragen.get(0));
-			//mainWindow.setResizable(false);
-		} catch (IOException e) {
-			//e.printStackTrace();
-
+		} catch (Exception e) {
 		}
 	}
 
@@ -148,7 +145,7 @@ public class Controller {
 				MainApp.primary.show();
 				//mainWindow.setResizable(false);
 			} catch (Exception e) {
-				System.exit(13);
+				
 			}
 		}
 	}

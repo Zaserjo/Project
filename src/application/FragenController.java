@@ -26,6 +26,7 @@ public class FragenController {
 	@FXML Button antwort3_btn;
 	@FXML Button antwort4_btn;
 	private String antwort;
+	private PlaySound p;
 	
 	static Counter richtig = new Counter(Controller.alleFragen.size());
 	
@@ -33,6 +34,7 @@ public class FragenController {
 
 	
 	public FragenController() {
+		p  = new PlaySound();
 		LaunchedManager.addListener(new Launched() {
 			@Override
 			public void launched(Object value) {
@@ -77,14 +79,13 @@ public class FragenController {
 		if(antwort1_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort1_btn.setStyle("-fx-background-color: lightgreen;");
-			antwort2_btn.setStyle("-fx-background-color: tomato");
-			antwort3_btn.setStyle("-fx-background-color: tomato");
-			antwort4_btn.setStyle("-fx-background-color: tomato");
+			p.setTemp(true);			
 		}
 		else {
 			antwort1_btn.setStyle("-fx-background-color: tomato;");
-
+			p.setTemp(false);
 		}
+		sound();
 		weiter();
 	}
 	
@@ -93,13 +94,13 @@ public class FragenController {
 		if(antwort2_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort2_btn.setStyle("-fx-background-color: lightgreen;");
-			antwort1_btn.setStyle("-fx-background-color: tomato");
-			antwort3_btn.setStyle("-fx-background-color: tomato");
-			antwort4_btn.setStyle("-fx-background-color: tomato");
+			p.setTemp(true);
 		}
 		else {
 			antwort2_btn.setStyle("-fx-background-color: tomato;");
+			p.setTemp(false);
 		}
+		sound();
 		weiter();
 	}
 	
@@ -108,13 +109,13 @@ public class FragenController {
 		if(antwort3_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort3_btn.setStyle("-fx-background-color: lightgreen;");
-			antwort1_btn.setStyle("-fx-background-color: tomato");
-			antwort2_btn.setStyle("-fx-background-color: tomato");
-			antwort4_btn.setStyle("-fx-background-color: tomato");
+			p.setTemp(true);
 		}
 		else {
 			antwort3_btn.setStyle("-fx-background-color: tomato;");
+			p.setTemp(false);
 		}
+		sound();
 		weiter();
 	}
 	
@@ -123,14 +124,19 @@ public class FragenController {
 		if(antwort4_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort4_btn.setStyle("-fx-background-color: lightgreen;");
-			antwort1_btn.setStyle("-fx-background-color: tomato");
-			antwort2_btn.setStyle("-fx-background-color: tomato");
-			antwort3_btn.setStyle("-fx-background-color: tomato");
+			p.setTemp(true);
 		}
 		else {
 			antwort4_btn.setStyle("-fx-background-color: tomato;");
+			p.setTemp(false);
 		}
+		sound();
 		weiter();
+	}
+	
+	public void sound() {
+		p.start(MainApp.primary);
+		p.player();
 	}
 		
 	public void weiter() {

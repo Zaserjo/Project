@@ -18,8 +18,6 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primary = primaryStage;
-		/*PlaySound p = new PlaySound();
-		p.start(primary);*/
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("JavaGUI.fxml"));
