@@ -64,6 +64,4 @@ public class Fragen {
         //decode and return the content
         return decode(result);
     }
-
-
 }

@@ -26,7 +26,7 @@
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#download" prefHeight="82.0" prefWidth="200.0" text="Quiz Extended" GridPane.columnIndex="1" />
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#profil" prefHeight="82.0" prefWidth="200.0" text="Profil" GridPane.columnIndex="2" />
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#musik" prefHeight="82.0" prefWidth="200.0" text="Musik" GridPane.rowIndex="1" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="82.0" prefWidth="200.0" text="Einstellungen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#settings" prefHeight="82.0" prefWidth="200.0" text="Einstellungen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="82.0" prefWidth="200.0" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="1" />
          </children>
       </GridPane>

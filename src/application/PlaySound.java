@@ -9,6 +9,7 @@ public class PlaySound extends Application {
 	private boolean temp;
 	private MediaPlayer mediaPlayer;
 	
+	@Override
 	public void start(Stage primaryStage) {
 		String song = "";
 		if(temp) {
