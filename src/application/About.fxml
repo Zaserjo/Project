@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
@@ -27,22 +26,14 @@
         </menus>
       </MenuBar>
    </top>
+   <bottom>
+      <Hyperlink onAction="#open" text="www.Zaserjo-POS_Projekt.netau.net" BorderPane.alignment="CENTER" />
+   </bottom>
    <center>
-      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Quiz Project by Talha Anwar and Manuel Zatschkowitsch" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Quiz Project by Talha Anwar and Manuel Zatschkowitsch" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#756262" />
-                  <Stop color="#756262" offset="0.26152387723663906" />
-                  <Stop color="BLACK" offset="0.3563218390804598" />
-                  <Stop color="#756767" offset="0.5095785440613024" />
-                  <Stop color="#756767" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </textFill>
       </Label>
    </center>
 </BorderPane>

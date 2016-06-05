@@ -1,1 +1,20 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#body {
+    -fx-background-color: #4DB6AC;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+#background {
+	-fx-background-color: #009688;
+	/*menu: #00796B*/
+}
+
+#menu {
+	-fx-background-color: #00796B;
+}
+
+.label{
+    -fx-text-fill: white;
+}

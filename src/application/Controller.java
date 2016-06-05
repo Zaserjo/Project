@@ -1,9 +1,15 @@
 package application;
 
+import java.awt.Desktop;
+
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
@@ -28,9 +34,19 @@ public class Controller{
 	@FXML ToggleButton tgl_btn7;
 	@FXML ToggleButton tgl_btn8;
 	@FXML ToggleButton tgl_btn9;
+	@FXML ComboBox<String> comboBox;
 
 	public Controller() {
 
+	}
+
+	public void open() throws URISyntaxException {
+		URI path = new URI("www.Zaserjo-POS_Projekt.netau.net");
+		try {
+			Desktop.getDesktop().browse(path);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void download() {
@@ -41,6 +57,29 @@ public class Controller{
 			 * mainWindow.setHeight(Main.height);
 			 * mainWindow.setWidth(Main.width);
 			 */
+			MainApp.primary.show();
+			// mainWindow.setResizable(false);
+		} catch (IOException e) {
+			e.printStackTrace();
+
+		}
+	}
+	
+	public void profilBearbeiten() {
+		try {
+			
+			ObservableList<String> items = 
+				    FXCollections.observableArrayList(
+				        "Option 1",
+				        "Option 2",
+				        "Option 3"
+				    );
+			for(String s: items) {
+				System.out.println(s.toString());
+			}
+			comboBox = new ComboBox<String>(items);
+			Parent root = FXMLLoader.load(MainApp.class.getResource("ProfilBearbeiten.fxml"));
+			MainApp.primary.setScene(new Scene(root));
 			MainApp.primary.show();
 			// mainWindow.setResizable(false);
 		} catch (IOException e) {
@@ -80,10 +119,11 @@ public class Controller{
 	}
 
 	public void musik() throws Exception {
+		MP3 mp3 = new MP3();
+		mp3.start(MainApp.primary);
 		if (MP3.instance) {
+			mp3.stop();
 		} else {
-			MP3 mp3 = new MP3();
-			mp3.start(MainApp.primary);
 			mp3.player();
 		}
 	}
@@ -108,7 +148,6 @@ public class Controller{
 			// mainWindow.setResizable(false);
 		} catch (IOException e) {
 			e.printStackTrace();
-
 		}
 	}
 
@@ -237,6 +276,7 @@ public class Controller{
 			writer.write(password_pf.getText());
 			writer.flush();
 			profilErfolgreich();
+			writer.close();
 		}
 
 	}

@@ -99,7 +99,7 @@ public class Uebung1 {
             
            final String tempFehler = fehler;
            final int temp = mistakes; 
-           new Callback(3000, () -> {
+           new Callback(() -> {
         	   if(temp > 0) {
                	uebungUnerfolgreich(tempFehler);
                } else {

@@ -9,26 +9,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class Uebung2 {
-	@FXML TextField textInput2;
-	@FXML Button antwort1_input;
-	@FXML Button antwort2_input;
-	@FXML Button antwort3_input;
-	@FXML Button antwort4_input;
+public class Uebung3 {
+	@FXML TextField textInput3;
+	@FXML Label ergebnis_tf;
 	
-	public void uebung2run() {
-        String test = textInput2.getText();
+	public void uebung3run() {
+        String test = textInput3.getText();
         String fehler = "";
         
         int mistakes = 0;
-        if(test.equals("userAntwort==richtigeAntwort") || test.equals("userAntwort == richtigeAntwort") ||test.equals("richtigeAntwort == userAntwort") ||test.equals("richtigeAntwort==userAntwort")){
-        	
+        if(!(test.substring(test.length()-1,test.length()).equals(";"))) {
+        	fehler+= "; fehlt ";
+        }
+        if(test.equals("a+b+c;") || test.equals("a + b + c;")) {
+        	ergebnis_tf.setText("32");
         } else {
         	mistakes++;
-        	fehler+= "If false";
+        	ergebnis_tf.setText("Es wurde falsch gerechnet");
+        	fehler+= "Variablen nicht richtig addiert";
         }
+        
+        
         
        final String tempFehler = fehler;
        final int temp = mistakes; 
