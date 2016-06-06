@@ -17,5 +17,4 @@ public class LaunchedManager {
 		}
 		liste.clear();
 	}
-	
 }

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FragenController">
+<BorderPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FragenController">
    <bottom>
       <GridPane prefHeight="160.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -23,10 +23,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="antwort1_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer1" prefHeight="316.0" prefWidth="597.0" text="Button" />
-            <Button fx:id="antwort2_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer2" prefHeight="178.0" prefWidth="447.0" text="Button" GridPane.columnIndex="1" />
-            <Button fx:id="antwort3_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer3" prefHeight="140.0" prefWidth="336.0" text="Button" GridPane.rowIndex="1" />
-            <Button fx:id="antwort4_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer4" prefHeight="126.0" prefWidth="376.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="body" fx:id="antwort1_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer1" prefHeight="316.0" prefWidth="597.0" stylesheets="@application.css" text="Button" />
+            <Button id="body" fx:id="antwort2_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer2" prefHeight="178.0" prefWidth="447.0" stylesheets="@application.css" text="Button" GridPane.columnIndex="1" />
+            <Button id="body" fx:id="antwort3_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer3" prefHeight="140.0" prefWidth="336.0" stylesheets="@application.css" text="Button" GridPane.rowIndex="1" />
+            <Button id="body" fx:id="antwort4_btn" mnemonicParsing="false" onMouseClicked="#checkAnswer4" prefHeight="126.0" prefWidth="376.0" stylesheets="@application.css" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </bottom>
@@ -38,17 +38,17 @@
       </Label>
    </center>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar id="menu" stylesheets="@application.css" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#back" text="Home" />
-              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+                  <MenuItem mnemonicParsing="false" onAction="#back" style="-fx-text-fill: #4DB6AC;" text="Home" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" style="-fx-text-fill: #4DB6AC;" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#about" style="-fx-text-fill: #4DB6AC;" text="About" />
             </items>
           </Menu>
         </menus>

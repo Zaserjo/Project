@@ -2,14 +2,13 @@ package application;
 
 import java.awt.Desktop;
 
+
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
@@ -66,29 +65,6 @@ public class Controller{
 		}
 	}
 	
-	public void profilBearbeiten() {
-		try {
-			
-			ObservableList<String> items = 
-				    FXCollections.observableArrayList(
-				        "Option 1",
-				        "Option 2",
-				        "Option 3"
-				    );
-			for(String s: items) {
-				System.out.println(s.toString());
-			}
-			comboBox = new ComboBox<String>(items);
-			Parent root = FXMLLoader.load(MainApp.class.getResource("ProfilBearbeiten.fxml"));
-			MainApp.primary.setScene(new Scene(root));
-			MainApp.primary.show();
-			// mainWindow.setResizable(false);
-		} catch (IOException e) {
-			e.printStackTrace();
-
-		}
-	}
-
 	public void back() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("JavaGUI.fxml"));
@@ -120,8 +96,10 @@ public class Controller{
 	}
 
 	public void musik() throws Exception {
-		if (MP3.isPlaying = true) {
-			mp3.player();
+		if (MP3.isPlaying) {
+			mp3.stop();
+		} else {
+			mp3.play();
 		}
 	}
 
@@ -274,7 +252,6 @@ public class Controller{
 			profilErfolgreich();
 			writer.close();
 		}
-
 	}
 
 	public void profilLaden() throws IOException {

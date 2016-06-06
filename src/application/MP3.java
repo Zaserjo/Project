@@ -15,7 +15,7 @@ public class MP3 extends Application {
 
 	private MediaPlayer mediaPlayer;
 	private ArrayList<String> songs;
-	public static boolean isPlaying;
+	public static boolean isPlaying = false;
 	
 	public MP3() throws Exception {
 		songs = new ArrayList<String>();
@@ -49,11 +49,13 @@ public class MP3 extends Application {
 		Collections.shuffle(songs);
 	}
 	
-    public void player() {
+    public void play() {
+    	isPlaying = true;
     	mediaPlayer.play();
 	}
     
     public void stop() {
-    	mediaPlayer.stop();
+    	isPlaying = false;
+    	mediaPlayer.pause();
     }
 }

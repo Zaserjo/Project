@@ -1,16 +1,15 @@
 package application;
 
 import java.io.IOException;
+
 import java.nio.file.Paths;
 
-import javax.xml.transform.Templates;
 
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuBar;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -37,25 +36,12 @@ public class Abspann {
 		Scene scene = new Scene(root, width, height);
 
 		root.getChildren().add(mediaView);
-		mediaPlayer.play();
-		stage.setScene(scene);
-		stage.show();
-	}
-
-	public void weiter() {
-		new Thread(new Runnable() {
-
+	
+		mediaPlayer.setOnEndOfMedia(new Runnable() {
+			
 			@Override
 			public void run() {
-
-				if(!abspann) {
-					Platform.runLater(() -> {
-						start(MainApp.primary);
-					});
-					return;
-				}
-					
-
+				// TODO Auto-generated method stub
 				Platform.runLater(() -> {
 					Parent root;
 					try {
@@ -68,7 +54,20 @@ public class Abspann {
 					}
 				});
 			}
+		});
+		
+		mediaPlayer.play();
+		MainApp.primary.setScene(scene);
+		MainApp.primary.show();
+	}
+
+	public void weiter() {
+		new Thread(() -> {
+					Platform.runLater(() -> {
+						start(MainApp.primary);
+					});
 		}).start();
+				
 	}
 
 	public void back() {

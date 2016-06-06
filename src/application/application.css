@@ -1,13 +1,26 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#body {
+#body, #toggleButton {
     -fx-background-color: #4DB6AC;
     -fx-text-fill: white;
     -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
+    -fx-background-radius: 5px; 
+}
+
+#toggleButton:selected {
+	-fx-text-fill: #CDDC39;
 }
 
 #background {
 	-fx-background-color: #009688;
+}
+
+#text {
+	-fx-background-color: #008888;
+}
+
+#body2 {
+	-fx-background-color: #4DB6AC;
+    -fx-text-fill: white;
 }
 
 #menu {

@@ -15,7 +15,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <center>
-      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+      <GridPane id="background" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@application.css" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,31 +47,31 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <TextField fx:id="vorname_tf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="118.0" prefWidth="300.0" promptText="Max" GridPane.columnIndex="1" />
-            <TextField fx:id="nachname_tf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="300.0" promptText="Mustermann" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="username_tf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="115.0" prefWidth="300.0" promptText="MaxMustermann123" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField fx:id="password_pf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField id="text" fx:id="vorname_tf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="118.0" prefWidth="300.0" promptText="Max" stylesheets="@application.css" GridPane.columnIndex="1" />
+            <TextField id="text" fx:id="nachname_tf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="90.0" prefWidth="300.0" promptText="Mustermann" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField id="text" fx:id="username_tf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="115.0" prefWidth="300.0" promptText="MaxMustermann123" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField id="text" fx:id="password_pf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="300.0" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar id="menu" stylesheets="@application.css" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#back" text="Home" />
-              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+                  <MenuItem mnemonicParsing="false" onAction="#back" style="-fx-text-fill: #4DB6AC;" text="Home" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" style="-fx-text-fill: #4DB6AC;" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#about" style="-fx-text-fill: #4DB6AC;" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
    </top>
    <bottom>
-      <Button mnemonicParsing="false" onMouseClicked="#profilErstellen" prefHeight="0.0" prefWidth="735.0" text="Bestätigen" BorderPane.alignment="CENTER" />
+      <Button id="body" mnemonicParsing="false" onMouseClicked="#profilErstellen" prefHeight="0.0" prefWidth="735.0" stylesheets="@application.css" text="Bestätigen" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>
