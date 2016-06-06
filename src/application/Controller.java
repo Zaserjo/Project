@@ -35,9 +35,10 @@ public class Controller{
 	@FXML ToggleButton tgl_btn8;
 	@FXML ToggleButton tgl_btn9;
 	@FXML ComboBox<String> comboBox;
+	private MP3 mp3;
 
-	public Controller() {
-
+	public Controller() throws Exception {
+		mp3 = new MP3();
 	}
 
 	public void open() throws URISyntaxException {
@@ -119,11 +120,7 @@ public class Controller{
 	}
 
 	public void musik() throws Exception {
-		MP3 mp3 = new MP3();
-		mp3.start(MainApp.primary);
-		if (MP3.instance) {
-			mp3.stop();
-		} else {
+		if (MP3.isPlaying = true) {
 			mp3.player();
 		}
 	}
@@ -136,7 +133,6 @@ public class Controller{
 			// mainWindow.setResizable(false);
 		} catch (IOException e) {
 			e.printStackTrace();
-
 		}
 	}
 

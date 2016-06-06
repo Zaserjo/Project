@@ -15,10 +15,11 @@ public class MP3 extends Application {
 
 	private MediaPlayer mediaPlayer;
 	private ArrayList<String> songs;
-	public static boolean instance;
+	public static boolean isPlaying;
 	
-	public MP3() {
+	public MP3() throws Exception {
 		songs = new ArrayList<String>();
+		start(MainApp.primary);
 	}
 
 	@Override
@@ -31,7 +32,6 @@ public class MP3 extends Application {
 	    final URL resource = getClass().getResource(song);
 	    final Media media = new Media(resource.toString());
 	    mediaPlayer = new MediaPlayer(media);
-	    instance = true;
     }
 	
 	public void init() {
@@ -51,7 +51,6 @@ public class MP3 extends Application {
 	
     public void player() {
     	mediaPlayer.play();
-    	mediaPlayer.setAutoPlay(true);
 	}
     
     public void stop() {
