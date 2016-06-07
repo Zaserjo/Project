@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<Pane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Button alignment="CENTER" layoutX="97.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#profilNeuOderLaden" prefHeight="155.0" prefWidth="407.0" text="Profil wurde nicht gefunden. Um fortzufahren, klicken sie auf diese Nachricht. Bitte ein neues Profil erstellen!" textAlignment="CENTER" wrapText="true">
+      <Button id="body" alignment="CENTER" layoutX="97.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#profilNeuOderLaden" prefHeight="155.0" prefWidth="407.0" stylesheets="@application.css" text="Profil wurde nicht gefunden. Um fortzufahren, klicken sie auf diese Nachricht. Bitte ein neues Profil erstellen!" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="22.0" />
          </font>

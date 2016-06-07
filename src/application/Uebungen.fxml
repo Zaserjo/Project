@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UebungenController">
+<BorderPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UebungenController">
    <center>
       <GridPane maxHeight="300.0" maxWidth="400.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -22,25 +22,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1" text="Übung 1 - Variablen mit Getter und Setter" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung2" text="Übung 2 - Überprüfungen mit if und else" GridPane.rowIndex="1" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung3" text="Übung 3 - Rechnen mit Variablen (Arithmetik)" GridPane.rowIndex="2" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung4" text="Übung 4 - Rechnen mit Variablen mithilfe von Schleifen" GridPane.rowIndex="3" />
+            <Button id="body" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1" text="Übung 1 - Variablen mit Getter und Setter" />
+            <Button id="body" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung2" text="Übung 2 - Überprüfungen mit if und else" GridPane.rowIndex="1" />
+            <Button id="body" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung3" text="Übung 3 - Rechnen mit Variablen (Arithmetik)" GridPane.rowIndex="2" />
+            <Button id="body" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung4" text="Übung 4 - Rechnen mit Variablen mithilfe von Schleifen" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar id="menu" stylesheets="@application.css" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#back" text="Home" />
-              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+              <MenuItem mnemonicParsing="false" onAction="#back" style="-fx-text-fill: #4DB6AC;" text="Home" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" style="-fx-text-fill: #4DB6AC;" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#about" style="-fx-text-fill: #4DB6AC;" text="About" />
             </items>
           </Menu>
         </menus>

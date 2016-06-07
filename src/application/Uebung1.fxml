@@ -14,24 +14,24 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Uebung1">
    <top>
-      <MenuBar prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <MenuBar id="menu" prefHeight="31.0" prefWidth="600.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#back" text="Home" />
-              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+              <MenuItem mnemonicParsing="false" onAction="#back" style="-fx-text-fill: #4DB6AC;" text="Home" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" style="-fx-text-fill: #4DB6AC;" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#about" style="-fx-text-fill: #4DB6AC;" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
    </top>
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane id="background" stylesheets="@application.css" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="222.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="378.0" />
@@ -53,10 +53,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="antwort1_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TODO: Antwort 1" textAlignment="CENTER" wrapText="true" />
-                  <Button fx:id="antwort3_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="TODO: Antwort 3" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
-                  <Button fx:id="antwort4_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="TODO: Antwort 4" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="antwort2_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TODO: Antwort 2" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" />
+                  <Button id="body" fx:id="antwort1_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TODO: Antwort 1" textAlignment="CENTER" wrapText="true" />
+                  <Button id="body" fx:id="antwort3_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="TODO: Antwort 3" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
+                  <Button id="body" fx:id="antwort4_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="23.0" prefWidth="65.0" text="TODO: Antwort 4" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button id="body" fx:id="antwort2_input" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TODO: Antwort 2" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -99,7 +99,7 @@
                   <TextArea fx:id="textInput" prefHeight="733.0" prefWidth="1258.0" wrapText="true" BorderPane.alignment="CENTER" />
                </center>
                <bottom>
-                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1run" prefHeight="31.0" prefWidth="308.0" text="Programm ausführen" BorderPane.alignment="CENTER" />
+                  <Button id="body" alignment="CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#uebung1run" prefHeight="31.0" prefWidth="308.0" stylesheets="@application.css" text="Programm ausführen" BorderPane.alignment="CENTER" />
                </bottom>
             </BorderPane>
          </children>

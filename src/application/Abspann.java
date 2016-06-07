@@ -19,9 +19,7 @@ import javafx.stage.Stage;
  * A sample media player which loops indefinitely over the same video
  */
 public class Abspann {
-	
-	private boolean abspann;
-	
+		
 	public void start(Stage stage) {
 		double height = MainApp.primary.getHeight();
 		double width = MainApp.primary.getWidth();
@@ -68,18 +66,5 @@ public class Abspann {
 					});
 		}).start();
 				
-	}
-
-	public void back() {
-		try {
-			Parent root = FXMLLoader.load(MainApp.class.getResource("JavaGUI.fxml"));
-			// MainApp.primary.setScene(new Scene(root));
-			MainApp.primary.setScene(new Scene(root));
-			MainApp.primary.show();
-			// mainWindow.setResizable(false);
-		} catch (IOException e) {
-			e.printStackTrace();
-
-		}
 	}
 }

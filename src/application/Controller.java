@@ -1,14 +1,11 @@
 package application;
 
-import java.awt.Desktop;
-
-
 import java.io.*;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
+import application.Encoding.EncodingType;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
@@ -33,20 +30,10 @@ public class Controller{
 	@FXML ToggleButton tgl_btn7;
 	@FXML ToggleButton tgl_btn8;
 	@FXML ToggleButton tgl_btn9;
-	@FXML ComboBox<String> comboBox;
 	private MP3 mp3;
 
 	public Controller() throws Exception {
 		mp3 = new MP3();
-	}
-
-	public void open() throws URISyntaxException {
-		URI path = new URI("www.Zaserjo-POS_Projekt.netau.net");
-		try {
-			Desktop.getDesktop().browse(path);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	public void download() {
@@ -78,7 +65,7 @@ public class Controller{
 		}
 	}
 
-	public void settings()
+	/*public void settings()
 	{
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("Einstellung.fxml"));
@@ -88,7 +75,7 @@ public class Controller{
 			e.printStackTrace();
 
 		}
-	}
+	}*/
 	
 	public void abspann() {
 		Abspann abspann = new Abspann();
@@ -237,8 +224,9 @@ public class Controller{
 		}
 	}
 
-	public void profilErstellen() throws IOException {
-
+	public void profilErstellen() throws IOException, NoSuchAlgorithmException {
+		Encoding encoding = new Encoding(password_pf.getText(), EncodingType.MD5);
+		String passwordString = encoding.getHashcodeAsString();
 		if (vorname_tf.getText().equals("") || nachname_tf.getText().equals("") || username_tf.getText().equals("")
 				|| password_pf.getText().equals("")) {
 			profilNeuUnerfolgreich();
@@ -247,7 +235,7 @@ public class Controller{
 			writer.write(vorname_tf.getText() + ";");
 			writer.write(nachname_tf.getText() + ";");
 			writer.write(username_tf.getText() + ";");
-			writer.write(password_pf.getText());
+			writer.write(passwordString);
 			writer.flush();
 			profilErfolgreich();
 			writer.close();
