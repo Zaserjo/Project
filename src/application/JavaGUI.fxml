@@ -27,7 +27,7 @@
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin></Button>
-            <Button id="body" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#download" prefHeight="82.0" prefWidth="0.0" stylesheets="@application.css" text="Quiz Extended" GridPane.columnIndex="1">
+            <Button id="body" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#download" prefHeight="82.0" prefWidth="0.0" stylesheets="@application.css" text="Quiz fertig" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin></Button>
