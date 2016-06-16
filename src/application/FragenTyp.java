@@ -1,5 +1,8 @@
 package application;
 
+/*
+ * Fragenauswahl Enum
+ */
 public enum FragenTyp {
 	
 	SPORT(1),

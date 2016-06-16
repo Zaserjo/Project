@@ -11,6 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+/*
+ * Uebung 2
+ */
 public class Uebung2 {
 	@FXML TextField textInput2;
 	@FXML Button antwort1_input;
@@ -18,8 +21,13 @@ public class Uebung2 {
 	@FXML Button antwort3_input;
 	@FXML Button antwort4_input;
 	
+	/*
+	 * Überprüft User Eingaben und liefert Ergebnis
+	 */
 	public void uebung2run() {
-        String test = textInput2.getText();
+		UebungenController.number = 2;
+		String test = textInput2.getText();
+
         String fehler = "";
         
         int mistakes = 0;
@@ -38,9 +46,12 @@ public class Uebung2 {
            } else {
            	uebungErfolgreich();
            }
-       });
-	}	
+       });	
+	}
 	
+	/*
+	 * Wenn alles richtig gemacht wird, kommt man zum UebungErfolgreich-Fenster
+	 */
 	public void uebungErfolgreich()
 	{
 		try {
@@ -53,6 +64,9 @@ public class Uebung2 {
 		}
 	}
 	
+	/*
+	 * Bei einem Fehler wird der Fehler im uebungUnerfolgreich-Fenster gezeigt
+	 */
 	public void uebungUnerfolgreich(String error) {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("UebungUnerfolgreich.fxml"));
@@ -65,6 +79,9 @@ public class Uebung2 {
 		}
 	}
 	
+	/*
+	 * Zurück zur Startseite
+	 */
 	public void back()
 	{
 		try {
@@ -78,6 +95,9 @@ public class Uebung2 {
 		}
 	}
 
+	/*
+	 * About-Fenster
+	 */
 	public void about()
 	{
 		try {
@@ -91,6 +111,9 @@ public class Uebung2 {
 		}
 	}
 	
+	/*
+	 * Programm beenden
+	 */
 	public void exit()
 	{
 		System.exit(1);

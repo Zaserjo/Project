@@ -1,6 +1,5 @@
 package application;
 
-
 import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,54 +17,67 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
+/*
+ * Fragen werden hier verwaltet
+ */
 public class FragenController {
-	
-	@FXML Label fragennr_id;
-	@FXML Button antwort1_btn;
-	@FXML Button antwort2_btn;
-	@FXML Button antwort3_btn;
-	@FXML Button antwort4_btn;
+
+	@FXML
+	Label fragennr_id;
+	@FXML
+	Button antwort1_btn;
+	@FXML
+	Button antwort2_btn;
+	@FXML
+	Button antwort3_btn;
+	@FXML
+	Button antwort4_btn;
 	private String antwort;
 	private PlaySound p;
-	
-	static Counter richtig = new Counter(Controller.alleFragen.size());
-	
-	
 
-	
+	static Counter richtig = new Counter(Controller.alleFragen.size());
+
+	/*
+	 * Konstruktor
+	 */
 	public FragenController() {
-		p  = new PlaySound();
+		p = new PlaySound();
 		LaunchedManager.addListener(new Launched() {
 			@Override
 			public void launched(Object value) {
 				richtig = new Counter(Controller.alleFragen.size());
-				initialize((Fragen)value);
+				initialize((Fragen) value);
 			}
 		});
 	}
-	
+
+	/*
+	 * Fragen werden initialisiert
+	 */
 	public void initialize(Fragen f) {
 		fragennr_id.setText(f.getFrage());
 		String[] fragen = f.getLoesungen();
-		fragen = Arrays.copyOf(fragen,  fragen.length +1);
+		fragen = Arrays.copyOf(fragen, fragen.length + 1);
 		fragen[3] = f.getAntwort();
 		fragen = getRandom(fragen);
 		antwort = f.getAntwort();
-		
+
 		antwort1_btn.setText(fragen[0]);
 		antwort2_btn.setText(fragen[1]);
 		antwort3_btn.setText(fragen[2]);
 		antwort4_btn.setText(fragen[3]);
-
 	}
-	
+
+	/*
+	 * Array der Antworten werden durchgemischt
+	 */
 	private String[] getRandom(String[] input) {
 		long seed = System.nanoTime();
 		List<String> temp = Arrays.asList(input);
 		Collections.shuffle(temp, new Random(seed));
 		return temp.toArray(new String[0]);
 	}
-	
+
 	private void disableAll() {
 		antwort1_btn.setDisable(true);
 		antwort2_btn.setDisable(true);
@@ -73,75 +85,89 @@ public class FragenController {
 		antwort4_btn.setDisable(true);
 
 	}
-	
+
+	/*
+	 * Antwort1 wird überprüft
+	 */
 	public void checkAnswer1() {
 		disableAll();
-		if(antwort1_btn.getText().equals(antwort)) {
+		if (antwort1_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort1_btn.setStyle("-fx-background-color: lightgreen;");
-			p.setTemp(true);			
-		}
-		else {
+			p.setTemp(true);
+		} else {
 			antwort1_btn.setStyle("-fx-background-color: tomato;");
 			p.setTemp(false);
 		}
 		sound();
 		weiter();
 	}
-	
+
+	/*
+	 * Antwort2 wird überprüft
+	 */
 	public void checkAnswer2() {
 		disableAll();
-		if(antwort2_btn.getText().equals(antwort)) {
+		if (antwort2_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort2_btn.setStyle("-fx-background-color: lightgreen;");
 			p.setTemp(true);
-		}
-		else {
+		} else {
 			antwort2_btn.setStyle("-fx-background-color: tomato;");
 			p.setTemp(false);
 		}
 		sound();
 		weiter();
 	}
-	
+
+	/*
+	 * Antwort3 wird überprüft
+	 */
 	public void checkAnswer3() {
 		disableAll();
-		if(antwort3_btn.getText().equals(antwort)) {
+		if (antwort3_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort3_btn.setStyle("-fx-background-color: lightgreen;");
 			p.setTemp(true);
-		}
-		else {
+		} else {
 			antwort3_btn.setStyle("-fx-background-color: tomato;");
 			p.setTemp(false);
 		}
 		sound();
 		weiter();
 	}
-	
+
+	/*
+	 * Antwort4 wird überprüft
+	 */
 	public void checkAnswer4() {
 		disableAll();
-		if(antwort4_btn.getText().equals(antwort)) {
+		if (antwort4_btn.getText().equals(antwort)) {
 			richtig.increment();
 			antwort4_btn.setStyle("-fx-background-color: lightgreen;");
 			p.setTemp(true);
-		}
-		else {
+		} else {
 			antwort4_btn.setStyle("-fx-background-color: tomato;");
 			p.setTemp(false);
 		}
 		sound();
 		weiter();
 	}
-	
+
+	/*
+	 * Soundeffekte
+	 */
 	public void sound() {
 		p.start(MainApp.primary);
 		p.player();
 	}
-		
+
+	/*
+	 * Nächste Frage
+	 */
 	public void weiter() {
 		new Thread(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				try {
@@ -149,16 +175,16 @@ public class FragenController {
 				} catch (Exception e2) {
 					// TODO: handle exception
 				}
-				
+
 				Controller.currentIndex++;
-				
-				if(Controller.currentIndex >= Controller.alleFragen.size()) {
+
+				if (Controller.currentIndex >= Controller.alleFragen.size()) {
 					Platform.runLater(() -> {
 						ergebnis();
 					});
 					return;
 				}
-	
+
 				Platform.runLater(() -> {
 					Parent root;
 					try {
@@ -169,41 +195,46 @@ public class FragenController {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
+
 					LaunchedManager.notifyListener(Controller.alleFragen.get(Controller.currentIndex));
 				});
-		}}).start();
+			}
+		}).start();
 	}
-	
-	
-	public void back()
-	{
+
+	/*
+	 * Zurück zum Startbildschirm
+	 */
+	public void back() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("JavaGUI.fxml"));
 			MainApp.primary.setScene(new Scene(root));
 			MainApp.primary.show();
-			//mainWindow.setResizable(false);
+			// mainWindow.setResizable(false);
 		} catch (IOException e) {
 			e.printStackTrace();
-
 		}
 	}
 
-	public void about()
-	{
+	/*
+	 * About wird geöffnet
+	 */
+	public void about() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("About.fxml"));
 			MainApp.primary.setScene(new Scene(root));
 			MainApp.primary.show();
-			//mainWindow.setResizable(false);
+			// mainWindow.setResizable(false);
 		} catch (IOException e) {
 			e.printStackTrace();
 
 		}
 	}
-	
-	public void ergebnis()
-	{
+
+	/*
+	 * Ergebnis wird geöffnet
+	 */
+	public void ergebnis() {
 		try {
 
 			Parent root = FXMLLoader.load(MainApp.class.getResource("Ergebnis.fxml"));
@@ -211,16 +242,18 @@ public class FragenController {
 			MainApp.primary.show();
 			Controller.alleFragen.clear();
 			Controller.currentIndex = 0;
-			LaunchedManager.notifyListener(new int[] {richtig.result, richtig.max});
+			LaunchedManager.notifyListener(new int[] { richtig.result, richtig.max });
 			richtig.reset(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 
 		}
 	}
-	
-	public void exit()
-	{
+
+	/*
+	 * Programm wird beendet
+	 */
+	public void exit() {
 		System.exit(1);
 	}
 }

@@ -1,5 +1,8 @@
 package application;
 
+/*
+ * Zählt die richtigen Antworten
+ */
 public class Counter {
 	
 	public static int result = 0;

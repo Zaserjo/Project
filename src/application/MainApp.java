@@ -9,6 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/*
+ * Test-Klasse
+ */
 public class MainApp extends Application {
 
 	public static Stage primary;
@@ -30,6 +33,9 @@ public class MainApp extends Application {
 	}
 
 
+	/*
+	 * Startet das Programm
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

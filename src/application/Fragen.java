@@ -9,12 +9,18 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Fragen Initialisierung
+ */
 public class Fragen {
 	
 	private String frage;
 	private String antwort;
 	private String[] antworten;
 	
+	/*
+	 * Konstruktor
+	 */
 	private Fragen(String frage, String richtige_antwort, String[] antworten) {
 		this.frage = frage;
 		this.antwort = richtige_antwort;
@@ -33,6 +39,9 @@ public class Fragen {
 		return antworten;
 	}
 	
+	/*
+	 * Aus der Datenbank werden die Fragen geladen
+	 */
 	public static List<Fragen> getFragen(FragenTyp typ, int maxanzahl) throws IOException {
 		List<Fragen> fragen = new ArrayList<Fragen>();
 		String content = getContent("http://kappa-zaserjo.hol.es/?typ=" + typ.value + "&anz=" + maxanzahl);
@@ -44,6 +53,9 @@ public class Fragen {
 		return fragen;
 	}
 	
+	/*
+	 * Fragen werden entschlüsselt
+	 */
 	//get String from internet and decode it
 	private static String decode(String encoded) { //get string from base64
         try {
@@ -55,6 +67,9 @@ public class Fragen {
         return null;
     }
 	
+	/*
+	 * Inhalt wird zurückgeliefert
+	 */
 	private static String getContent(String url) throws IOException {
         URLConnection con = new URL(url).openConnection(); //Open the connection
         BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream())); //get the reader

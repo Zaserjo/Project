@@ -5,10 +5,18 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+/*
+ * Töne beim Quiz
+ */
 public class PlaySound extends Application {
 	private boolean temp;
 	private MediaPlayer mediaPlayer;
 	
+	/*
+	 * (non-Javadoc)
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 * Führt Soundeffekte aus
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		String song = "";
@@ -22,18 +30,32 @@ public class PlaySound extends Application {
 	    mediaPlayer = new MediaPlayer(media);
     }
 	
+	/*
+	 * Startet den Ton
+	 */
     public void player() {
     	mediaPlayer.play();
 	}
     
+    /*
+     * (non-Javadoc)
+     * @see javafx.application.Application#stop()
+     * Stoppt den Ton
+     */
     public void stop() {
     	mediaPlayer.stop();
     }
 
+	/**
+	 * @return the temp
+	 */
 	public boolean isTemp() {
 		return temp;
 	}
 
+	/**
+	 * @param temp the temp to set
+	 */
 	public void setTemp(boolean temp) {
 		this.temp = temp;
 	}

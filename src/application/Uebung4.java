@@ -17,6 +17,7 @@ public class Uebung4 {
 	@FXML Label ergebnis_tf;
 	
 	public void uebung4run() {
+		UebungenController.number = 4;
         String test = textInput4.getText();
         String fehler = "";
         
@@ -45,6 +46,9 @@ public class Uebung4 {
        });
 	}	
 	
+	/*
+	 * Wenn alles richtig gemacht wird, kommt man zum UebungErfolgreich-Fenster
+	 */
 	public void uebungErfolgreich()
 	{
 		try {
@@ -57,6 +61,9 @@ public class Uebung4 {
 		}
 	}
 	
+	/*
+	 * Bei einem Fehler wird Fehler in einem Extra-Fenster gezeigt
+	 */	
 	public void uebungUnerfolgreich(String error) {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("UebungUnerfolgreich.fxml"));
@@ -69,6 +76,9 @@ public class Uebung4 {
 		}
 	}
 	
+	/*
+	 * Zurück zum Startmenü
+	 */
 	public void back()
 	{
 		try {
@@ -82,6 +92,9 @@ public class Uebung4 {
 		}
 	}
 
+	/*
+	 * About wird geöffnet
+	 */
 	public void about()
 	{
 		try {
@@ -95,6 +108,9 @@ public class Uebung4 {
 		}
 	}
 	
+	/*
+	 * Programm wird beendet
+	 */
 	public void exit()
 	{
 		System.exit(1);

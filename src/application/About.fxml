@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -32,4 +33,7 @@
          </font>
       </Label>
    </center>
+   <bottom>
+      <Hyperlink id="body" onAction="#open" style="-fx-text-fill: white;" stylesheets="@application.css" text="www.Zaserjo-POS_Projekt.netau.net" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

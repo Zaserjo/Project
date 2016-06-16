@@ -14,10 +14,13 @@ import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 /**
- * A sample media player which loops indefinitely over the same video
+ * Credits
  */
 public class Abspann {
-		
+	
+	/*
+	 * Video wird abgespielt
+	 */
 	public void start(Stage stage) {
 		double height = MainApp.primary.getHeight();
 		double width = MainApp.primary.getWidth();
@@ -57,6 +60,9 @@ public class Abspann {
 		MainApp.primary.show();
 	}
 
+	/*
+	 * Zurück zum Startmenü
+	 */
 	public void weiter() {
 		new Thread(() -> {
 					Platform.runLater(() -> {

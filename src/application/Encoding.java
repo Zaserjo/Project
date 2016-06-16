@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * 
  * @author Leo Fanzott
- *
+ * Passwortverschlüsselung
  */
 public class Encoding {
 

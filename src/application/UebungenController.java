@@ -1,28 +1,6 @@
 package application;
 
-import java.awt.BorderLayout;
-
-
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Window;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import javax.security.auth.x500.X500Principal;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
-
-import com.sun.media.jfxmedia.events.NewFrameEvent;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +10,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+/*
+ * Uebungen werden verwaltet
+ */
 public class UebungenController {
 	@FXML TextArea textInput;
 	@FXML Label frage_input;
@@ -40,11 +21,12 @@ public class UebungenController {
 	@FXML Button antwort3_input;
 	@FXML Button antwort4_input;
 	@FXML TextArea textInput2;
+	public static int number;
+
 	
-	public UebungenController() {
-		
-	}
-	
+	/*
+	 * Zurück zum Startmenü
+	 */
 	public void back()
 	{
 		try {
@@ -58,6 +40,9 @@ public class UebungenController {
 		}
 	}
 
+	/*
+	 * About wird geöffnet
+	 */
 	public void about()
 	{
 		try {
@@ -71,6 +56,9 @@ public class UebungenController {
 		}
 	}
 	
+	/*
+	 * Uebung1 wird geöffnet
+	 */
 	public void uebung1() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("Uebung1.fxml"));
@@ -83,6 +71,9 @@ public class UebungenController {
 		}
 	}
 	
+	/*
+	 * Uebung2 wird geöffnet
+	 */
 	public void uebung2() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("Uebung2.fxml"));
@@ -95,6 +86,9 @@ public class UebungenController {
 		}
 	}
 	
+	/*
+	 * Uebung3 wird geöffnet
+	 */
 	public void uebung3() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("Uebung3.fxml"));
@@ -107,6 +101,9 @@ public class UebungenController {
 		}
 	}
 	
+	/*
+	 * Uebung4 wird geöffnet
+	 */
 	public void uebung4() {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("Uebung4.fxml"));
@@ -119,11 +116,17 @@ public class UebungenController {
 		}
 	}
 
+	/*
+	 * Programm beenden
+	 */
 	public void exit()
 	{
 		System.exit(1);
 	}
 	
+	/*
+	 * Wenn Uebung ohne Fehler absolviert, wird das in einem Extra Fenster gezeigt
+	 */
 	public void uebungErfolgreich()
 	{
 		try {
@@ -136,6 +139,9 @@ public class UebungenController {
 		}
 	}
 	
+	/*
+	 * Bei Fehler wird der Fehler in Extra-Fenster angezeigt
+	 */
 	public void uebungUnerfolgreich(String error) {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("UebungUnerfolgreich.fxml"));
@@ -148,7 +154,9 @@ public class UebungenController {
 		}
 	}
 	
-	
+	/*
+	 * Liste für die Übungs-Auswahl
+	 */
 	public void uebungen()
 	{
 		try {

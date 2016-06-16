@@ -22,19 +22,22 @@ public class Uebung1 {
 	@FXML Button antwort3_input;
 	@FXML Button antwort4_input;
 	
+	/*
+	 * Statische Klasse, um Eingaben zu benutzen.
+	 */
 	public static class ObjectTest {
 		String eingabeString;
 		
         public void set(String msg) { // soll von javascript aufgerufen werden
         	eingabeString = msg;
         }
-        
-        public void ueberpruefen(String msg) {
-        	eingabeString = msg;
-        }
 	}
 	
+	/*
+	 * Uebung 1 wird initialisiert und die Eingaben werden überprüft 	
+	 */
 	public void uebung1run() throws IOException, ScriptException, InterruptedException {
+		UebungenController.number = 1;
 		ScriptEngineManager manager = new ScriptEngineManager();
 
         ScriptEngine engine = manager.getEngineByName("nashorn");
@@ -108,11 +111,14 @@ public class Uebung1 {
            });
         }
         catch(Exception e) {
-        	//System.exit(-1);
+        	uebungUnerfolgreich("");
         }
         
 	}
 	
+	/*
+	 * Bei erfolgreicher Absolvierung öffnet sich das Uebungerfolgreich-Fenster
+	 */
 	public void uebungErfolgreich()
 	{
 		try {
@@ -125,6 +131,9 @@ public class Uebung1 {
 		}
 	}
 	
+	/*
+	 * Bei unerfolgreicher Absolvierung öffnet sich das Uebungunerfolgreich-Fenster, wo auch die Fehler angezeigt werden.
+	 */
 	public void uebungUnerfolgreich(String error) {
 		try {
 			Parent root = FXMLLoader.load(MainApp.class.getResource("UebungUnerfolgreich.fxml"));
@@ -137,6 +146,9 @@ public class Uebung1 {
 		}
 	}
 	
+	/*
+	 * Zurück zum Startmenü
+	 */
 	public void back()
 	{
 		try {
@@ -150,6 +162,9 @@ public class Uebung1 {
 		}
 	}
 
+	/*
+	 * Öffnet das About
+	 */
 	public void about()
 	{
 		try {
@@ -163,6 +178,9 @@ public class Uebung1 {
 		}
 	}
 	
+	/*
+	 * Schließt das Programm
+	 */
 	public void exit()
 	{
 		System.exit(1);
