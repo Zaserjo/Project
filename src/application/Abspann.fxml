@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <MenuBar id="menu" stylesheets="@application.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#back" style="-fx-text-fill: #4DB6AC;" text="Home" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" style="-fx-text-fill: #4DB6AC;" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" style="-fx-text-fill: #4DB6AC;" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <MediaView fx:id="mediaView" fitHeight="375.0" fitWidth="600.0" onMouseClicked="#init" BorderPane.alignment="CENTER">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </MediaView>
+   </center>
+</BorderPane>

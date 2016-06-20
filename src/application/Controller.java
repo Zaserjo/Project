@@ -4,6 +4,7 @@ import java.awt.Desktop;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
@@ -12,6 +13,9 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 /*
  * Class to control all actions
@@ -53,11 +57,15 @@ public class Controller {
 	ToggleButton tgl_btn8;
 	@FXML
 	ToggleButton tgl_btn9;
+	@FXML
+	MediaView mediaView = new MediaView();
 	private MP3 mp3;
 	static String vorname;
 	static String nachname;
 	static String username;
 	static String password;
+	private Media media;
+	private MediaPlayer mediaPlayer;
 
 	/*
 	 * MP3-Player wird initialisiert
@@ -110,9 +118,31 @@ public class Controller {
 	/*
 	 * Startet den Abspann
 	 */
-	public void abspann() {
+	/*public void abspann2() {
 		Abspann abspann = new Abspann();
 		abspann.weiter();
+	}*/
+	
+	/*
+	 * Starten den Abspann
+	 */
+	public void abspann() {
+		try {
+			Parent root = FXMLLoader.load(MainApp.class.getResource("Abspann.fxml"));
+			MainApp.primary.setScene(new Scene(root));
+			MainApp.primary.show();
+			init();
+			// mainWindow.setResizable(false);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void init() {
+		media = new Media("http://www.musik_projekt.net23.net/Credits.mp4");
+		mediaPlayer = new MediaPlayer(media);
+		mediaView.setMediaPlayer(mediaPlayer);
+		mediaPlayer.setAutoPlay(true);
 	}
 
 	/*
